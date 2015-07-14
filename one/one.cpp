@@ -42,12 +42,12 @@ int main(int argc, char* argv[])
 	XDrawLine(dsp, win, gc, 10, 10, 100, 100);
 	XDrawLine(dsp, win, gc, 100, 10, 10, 100);
 	
-	event_mask = ButtonPressMask|ButtonReleaseMask;
+	event_mask = ButtonPressMask|ButtonReleaseMask|KeyPressMask;
 	XSelectInput(dsp, win, event_mask);
 	
 	do{
 		XNextEvent(dsp, &evt);
-		if(evt.type == ButtonRelease)
+		if(evt.type == KeyPress)
 		{
 			XDrawLine(dsp, win, gc, 0, 0, rand()*400, 400);
 		}

@@ -47,7 +47,7 @@ int main(int argc, char* argv[])
 	
 	do{
 		XNextEvent(dsp, &evt);
-		if(evt.type == KeyRelease)
+		if(evt.type == ButtonRelease)
 		{
 			XDrawLine(dsp, win, gc, 0, 0, rand()*400, 400);
 		}
