@@ -53,7 +53,7 @@ int main(int argc, char* argv[])
 		{
 			x++;
 			printf("%i\t%i", x, y);
-			XDrawLine(dsp, win, gc, 0, 0, x, y);
+			XDrawLine(dsp, win, gc, 0, 0, 10*x, 10*y);
 		}
 	}while(true);
 	

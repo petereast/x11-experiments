@@ -46,7 +46,7 @@ int main(int argc, char* argv[])
 	XSelectInput(dsp, win, event_mask);
 	srand((int) time(0));
 	int x = 1;
-	int y = (x*x)+(3*x)+3
+	int y = (x*x)+(3*x)+3;
 	do{
 		XNextEvent(dsp, &evt);
 		if(evt.type == KeyPress)
