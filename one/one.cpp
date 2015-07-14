@@ -22,7 +22,7 @@ int main(int argc, char* argv[])
 									DefaultRootWindow(dsp),
 									50, 50,
 									400, 400,
-									0, black,
+									5, black,
 									white);
 	XMapWindow(dsp, win);
 	
