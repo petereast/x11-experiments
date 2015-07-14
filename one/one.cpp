@@ -42,9 +42,9 @@ int main(int argc, char* argv[])
 	//XDrawLine(dsp, win, gc, 10, 10, 100, 100);
 	//XDrawLine(dsp, win, gc, 100, 10, 10, 100);
 	
-	for(int i = 0; i!= 400; i++)
+	for(int i = 0; i!= 200; i++)
 	{
-		XDrawLine(dsp, win, gc, i, 0, i, 400);
+		XDrawLine(dsp, win, gc, i*2, 0, i*2, 400);
 	}
 	
 	event_mask = ButtonPressMask|ButtonReleaseMask|KeyPressMask;
