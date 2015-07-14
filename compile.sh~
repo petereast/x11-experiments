@@ -21,3 +21,5 @@ git add .
 git commit --message="Automated git update commital"
 
 git push origin HEAD:minutely_build
+
+reset && echo "\n\n Automated build and commit complete"
