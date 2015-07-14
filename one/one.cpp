@@ -39,8 +39,13 @@ int main(int argc, char* argv[])
 	
 	XSetForeground(dsp, gc, black);
 	
-	XDrawLine(dsp, win, gc, 10, 10, 100, 100);
-	XDrawLine(dsp, win, gc, 100, 10, 10, 100);
+	//XDrawLine(dsp, win, gc, 10, 10, 100, 100);
+	//XDrawLine(dsp, win, gc, 100, 10, 10, 100);
+	
+	for(int i = 0; i!= 400; i++)
+	{
+		XDrawLine(dsp, win, gc, i, 0, i, 400);
+	}
 	
 	event_mask = ButtonPressMask|ButtonReleaseMask|KeyPressMask;
 	XSelectInput(dsp, win, event_mask);
