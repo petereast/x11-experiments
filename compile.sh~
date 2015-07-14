@@ -4,12 +4,12 @@
 
 ##TODO: Do a g++ compile of everything *.cpp that can be found
 
-for directory in $(ls -R -1 -B -U -L | grep ":") 
+for directory in $(ls -R -1 -B -U -L | grep ":" | awk '{gsub(":", "/"); print}') 
 	do
-		for filename in $($(ls -R -1 -B -U -L | grep ".cpp") | awk '{gsub(":", "/"); print $2;}')
+		for filename in $(ls $directory -B -1 | grep ".cpp")
 			do
-				echo $directory $filename
-				#g++ -I /usr/X11/include -L /usr/X11/lib -o output $filename -lX11
+				target="$directory$filename"
+				g++ -Wall $target  -lX11  >> "${directory}compile.log"			
 	done
 done
 
