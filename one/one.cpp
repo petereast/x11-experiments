@@ -51,7 +51,8 @@ int main(int argc, char* argv[])
 		XNextEvent(dsp, &evt);
 		if(evt.type == KeyPress)
 		{
-			x++
+			x++;
+			printf("%i\t%i", x, y);
 			XDrawLine(dsp, win, gc, 0, 0, x, y);
 		}
 	}while(true);
