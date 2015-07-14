@@ -10,6 +10,7 @@ for directory in $(ls -R -1 -B -U -L | grep ":" | awk '{gsub(":", "/"); print}')
 			do
 				target="$directory$filename"
 				g++ -Wall $target  -lX11 -o out #>> "${directory}compile.log"
+				echo "Built $target";
 	done
 done
 
