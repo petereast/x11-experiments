@@ -49,7 +49,7 @@ int main(int argc, char* argv[])
 		XNextEvent(dsp, &evt);
 		if(evt.type == KeyPress)
 		{
-			XDrawLine(dsp, win, gc, 0, 0, rand()*800, 400);
+			XDrawLine(dsp, win, gc, 0, 0, rand()*400, rand()*400);
 		}
 	}while(true);
 	
