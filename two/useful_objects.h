@@ -10,13 +10,20 @@
 
 class TextBox
 {
-  XFontStruct font_info;
+  XFontStruct *font_info;
 public:
   TextBox(Display *dsp, Window win, GC gc, char* text, int x, int y);
 };
 
 TextBox::TextBox( Display *dsp, Window win, GC gc, char* text, int x, int y) {
-
+    //Load a font
+    //XFontStruct **font_info; not sure if I need this
+    char *fontname = "9x15";
+    if((font_info = XLoadQueryFont(dsp, fontname)) == NULL)
+    {
+      printf("Error loading the font :(\n");
+      exit(-1);
+    }
 
     int string_length = strlen(text);
     printf("this workded\n");
