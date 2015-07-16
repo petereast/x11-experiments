@@ -52,7 +52,7 @@ int main(int argc, char* argv[])
 	text -> chars = "Hello world";
 	text -> nchars = 11;
 
-	XDrawText(dsp, win, gc, 350, 0, text);
+	XDrawText(dsp, win, gc, 350, 0, text, 0);
 	event_mask = ButtonPressMask|ButtonReleaseMask|KeyPressMask;
 	XSelectInput(dsp, win, event_mask);
 	srand((int) time(0));
