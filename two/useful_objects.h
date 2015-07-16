@@ -10,12 +10,13 @@
 
 class TextBox
 {
+  XFontStruct *font_info;
 public:
   TextBox(Display *dsp, Window win, GC gc, char* text, int x, int y);
 };
 
 TextBox::TextBox( Display *dsp, Window win, GC gc, char* text, int x, int y) {
-    XFontStruct *font_info;
+
 
     int string_length = strlen(text);
     printf("this workded\n");
