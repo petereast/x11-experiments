@@ -7,7 +7,7 @@
 #include <string.h>
 #include "useful_objects.h"
 
-void draw(Display dsp, Window win, GC gc);
+void draw(Display dsp, Window win, GC gc, XEvent *ev);
 int main(int argc, char* argv[])
 {
 	printf("This program is designed to be a tester for various UI Elements in an\nupcoming project. Functionality is not important.\n");
