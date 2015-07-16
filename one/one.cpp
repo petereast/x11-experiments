@@ -55,8 +55,8 @@ int main(int argc, char* argv[])
 	char *string1 = "hello world I say hello";
 	int string1_length = strlen(string1);
 
-	XDrawString(display, win, gc, 50, 50, string1, string1_length);
-	
+	XDrawString(dsp, win, gc, 50, 50, string1, string1_length);
+
 
 	event_mask = ButtonPressMask|ButtonReleaseMask|KeyPressMask;
 	XSelectInput(dsp, win, event_mask);
