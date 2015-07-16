@@ -8,8 +8,11 @@
 
 class TextBox
 {
-  void TextBox(Display *dsp, Window win, GC gc, char* text, int x, int y)
-  {
+protected:
+  void TextBox(Display *dsp, Window win, GC gc, char* text, int x, int y);
+};
+
+TextBox::TextBox  {
     XFontStruct *font_info;
 
     int string_length = strlen(text);
@@ -29,7 +32,6 @@ class TextBox
     XDrawLine(dsp, win, gc, x-padding, y-height-padding, x+width+padding, y-height-padding); //bottom
   }
 
-}
 
 
 
