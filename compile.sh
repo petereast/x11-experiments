@@ -10,7 +10,7 @@ for directory in $(ls -R -1 -B -U -L | grep ":" | awk '{gsub(":", "/"); print}')
 		for filename in $(ls $directory -B -1 | grep ".cpp")
 			do
 				target="$directory$filename"
-				g++  $target  -lX11 -o "$directory"out -Wwrite-strings >> "${directory}compile.log"
+				g++  $target  -lX11 -o "$directory"out >> "${directory}compile.log"
 				echo "Built $target\nOutput to ${directory}out";
 	done
 done
@@ -19,7 +19,7 @@ done
 ##TODO: Do a git commit/push to the branch minutely_build
 
 # Stage all the files to git
-git add .
+git add . --all
 
 # Commit those files
 git commit --message="Automated git update commital"
