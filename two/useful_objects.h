@@ -24,7 +24,7 @@ TextBox::TextBox( Display *dsp, Window win, GC gc, char* text, int x, int y) {
     printf("still working\n");
     int width = XTextWidth(font_info, text, string_length);
     int height = font_info->ascent + font_info->descent;
-
+    printf("Not working anymore\n");
     int padding = 5; //Padding of 5 pixels
 
     //Draw the box;
