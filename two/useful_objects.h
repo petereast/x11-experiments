@@ -4,7 +4,7 @@
 
 #include <X11/Xlib.h>
 #include <string.h>
-#include <stdio>
+#include <stdio.h>
 
 
 class TextBox
