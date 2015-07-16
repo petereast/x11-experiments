@@ -23,7 +23,7 @@ int main(int argc, char* argv[])
 	//TODO: Make it switchable between colours.
 	unsigned long foreground_colour = WhitePixel(dsp, screen_number);
 	unsigned long background_colour = BlackPixel(dsp, screen_number);
-
+	printf("1\n");
 	//Create a window
 	Window win = XCreateSimpleWindow(dsp,
 		DefaultRootWindow(dsp),
@@ -43,7 +43,7 @@ int main(int argc, char* argv[])
 	do{
 		XNextEvent(dsp, &ev);
 	}while(ev.type != MapNotify);
-
+	printf("1\n");
 	GC gc = XCreateGC(dsp, win, 0, NULL);
 
 	XSetForeground(dsp, gc, foreground_colour);
