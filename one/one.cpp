@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <stdio.h>
 #include <math.h>
+#include <string.h>
 
 
 int main(int argc, char* argv[])
@@ -47,12 +48,16 @@ int main(int argc, char* argv[])
 	{
 		XDrawLine(dsp, win, gc, i*2, 0, i*2, (i^3)+4*i);
 	}
-	XTextItem *text;
+	//Let's add some text
+	//Create a font
+	XFontStruct *font_info;
 
-	text -> chars = "Hello world";
-	text -> nchars = 11;
+	char *string1 = "hello world I say hello";
+	int string1_length = strlen(string1);
 
-	XDrawText(dsp, win, gc, 350, 0, text, 0);
+	XDrawString(display, win, gc, 50, 50, string1, string1_length);
+	
+
 	event_mask = ButtonPressMask|ButtonReleaseMask|KeyPressMask;
 	XSelectInput(dsp, win, event_mask);
 	srand((int) time(0));
