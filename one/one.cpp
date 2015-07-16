@@ -47,7 +47,7 @@ int main(int argc, char* argv[])
 	{
 		XDrawLine(dsp, win, gc, i*2, 0, i*2, (i^3)+4*i);
 	}
-	XTextItem text;
+	XTextItem *text;
 
 	text.chars = "Hello world";
 	text.nchars = 11;
