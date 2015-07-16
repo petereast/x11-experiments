@@ -5,6 +5,11 @@
 #include <X11/Xlib.h>
 #include <string.h>
 #include <stdio.h>
+#include <X11/Xutil.h>
+
+#include <X11/Xos.h>
+
+#include <X11/Xatom.h>
 
 
 class TextBox
@@ -17,7 +22,7 @@ TextBox::TextBox( Display *dsp, Window win, GC gc, char* text, int x, int y) {
     XFontStruct *font_info;
 
     int string_length = strlen(text);
-    printf("this vfm,afwbgkjwb4glkjabwlblworkded\n");
+    printf("this workded\n");
     XDrawString(dsp, win, gc, x, y, text, string_length);
 
     //Now draw a box around the text...
