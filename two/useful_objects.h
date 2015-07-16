@@ -27,7 +27,7 @@ TextBox::TextBox( Display *dsp, Window win, GC gc, char* text, int x, int y) {
 
     int string_length = strlen(text);
     printf("this workded\n");
-    XDrawString(dsp, win, gc, x, y, text, string_length);
+    XDrawString(dsp, win, gc, x, y, text, string_length, font_info);
 
     //Now draw a box around the text...
     printf("still working\n");
