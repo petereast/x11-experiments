@@ -50,8 +50,8 @@ int main(int argc, char* argv[])
 
 	//TODO: Impliment an easy text object.
 
-	XDrawLine(dsp, win, gc, 0, 0, 500, 500);
-	XDrawLine(dsp, win, gc, 0, 500, 500, 0);
+	//XDrawLine(dsp, win, gc, 0, 0, 500, 500);
+	//XDrawLine(dsp, win, gc, 0, 500, 500, 0);
 	printf("class");
 	TextBox tb(dsp, win, gc, "Hello World", 50, 50), tb2(dsp, win, gc, "Goodbye World", 100, 300);
 	printf(" worked nicely :)\n");
