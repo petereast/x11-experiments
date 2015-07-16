@@ -50,7 +50,7 @@ int main(int argc, char* argv[])
 	//TODO: Impliment an easy text object.
 
 	XDrawLine(dsp, win, gc, 0, 0, 500, 500);
-	XDrawLine(dsp, win, gc, 0, 500, 0, 500);
+	XDrawLine(dsp, win, gc, 0, 500, 500, 0);
 
 	event_mask = ButtonReleaseMask;
 	XSelectInput(dsp, win, event_mask);
