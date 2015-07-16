@@ -7,7 +7,7 @@
 #include <string.h>
 #include "useful_objects.h"
 
-
+void draw(Display dsp, Window win, GC gc);
 int main(int argc, char* argv[])
 {
 	printf("This program is designed to be a tester for various UI Elements in an\nupcoming project. Functionality is not important.\n");
@@ -53,17 +53,23 @@ int main(int argc, char* argv[])
 	//XDrawLine(dsp, win, gc, 0, 0, 500, 500);
 	//XDrawLine(dsp, win, gc, 0, 500, 500, 0);
 	printf("class");
-	TextBox tb(dsp, win, gc, "Hello World", 50, 50), tb2(dsp, win, gc, "Goodbye World", 100, 300);
+
 	printf(" worked nicely :)\n");
 	event_mask = ButtonReleaseMask;
 	XSelectInput(dsp, win, event_mask);
 
 	do{
 		XNextEvent(dsp, &ev);
+		draw(dsp, win, gc, ev);
 	}while(ev.type != ButtonRelease);
 
 	XDestroyWindow(dsp, win);
 	XCloseDisplay(dsp);
 
+
+}
+
+void draw(Display dsp, Window win, GC gc, XEvent *ev){
+	TextBox tb(dsp, win, gc, "Hello World", 50, 50), tb2(dsp, win, gc, "Goodbye World", 100, 300);
 
 }
