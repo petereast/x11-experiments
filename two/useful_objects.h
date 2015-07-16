@@ -18,7 +18,7 @@ public:
 TextBox::TextBox( Display *dsp, Window win, GC gc, char* text, int x, int y) {
     //Load a font
     //XFontStruct **font_info; not sure if I need this
-    char *fontname = "Ostrich Sans:style=Black";
+    char *fontname = "9x15";
     if((font_info = XLoadQueryFont(dsp, fontname)) == NULL)
     {
       printf("Error loading the font :(\n");
