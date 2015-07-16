@@ -25,6 +25,8 @@ TextBox::TextBox( Display *dsp, Window win, GC gc, char* text, int x, int y) {
       exit(-1);
     }
 
+    XSetFont(dsp, gc, font_info.fid);
+
     int string_length = strlen(text);
     printf("this workded\n");
     XDrawString(dsp, win, gc, x, y, text, string_length);
