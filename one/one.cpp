@@ -47,11 +47,12 @@ int main(int argc, char* argv[])
 	{
 		XDrawLine(dsp, win, gc, i*2, 0, i*2, (i^3)+4*i);
 	}
-	XTextItem text = XTextItem( "Hello world",
-									11,
-									0);
+	XTextItem text;
 
-	XDrawText(dsp, win, gc, 350, 0,);
+	text.chars = "Hello world";
+	text.nchars = 11;
+
+	XDrawText(dsp, win, gc, 350, 0, text);
 	event_mask = ButtonPressMask|ButtonReleaseMask|KeyPressMask;
 	XSelectInput(dsp, win, event_mask);
 	srand((int) time(0));
