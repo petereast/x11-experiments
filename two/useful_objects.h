@@ -21,6 +21,7 @@ TextBox::TextBox( Display *dsp, Window win, GC gc, char* text, int x, int y) {
     XDrawString(dsp, win, gc, x, y, text, string_length);
 
     //Now draw a box around the text...
+    printf("still working\n");
     int width = XTextWidth(font_info, text, string_length);
     int height = font_info->ascent + font_info->descent;
 
