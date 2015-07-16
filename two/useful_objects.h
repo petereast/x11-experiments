@@ -10,7 +10,7 @@
 
 class TextBox
 {
-  XFontStruct *font_info;
+  XFontStruct font_info;
 public:
   TextBox(Display *dsp, Window win, GC gc, char* text, int x, int y);
 };
