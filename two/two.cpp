@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
+#include "useful_objects.h"
 
 
 int main(int argc, char* argv[])
@@ -51,6 +52,8 @@ int main(int argc, char* argv[])
 
 	XDrawLine(dsp, win, gc, 0, 0, 500, 500);
 	XDrawLine(dsp, win, gc, 0, 500, 500, 0);
+
+	TextBox tb(dsp, win, gc, "Hello World", 50, 50);
 
 	event_mask = ButtonReleaseMask;
 	XSelectInput(dsp, win, event_mask);
