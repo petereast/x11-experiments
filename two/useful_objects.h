@@ -18,7 +18,7 @@ public:
 TextBox::TextBox( Display *dsp, Window win, GC gc, char* text, int x, int y) {
     //Load a font
     //XFontStruct **font_info; not sure if I need this
-    char *fontname = "9x15";
+    char *fontname = "4x8";
     if((font_info = XLoadQueryFont(dsp, fontname)) == NULL)
     {
       printf("Error loading the font :(\n");
@@ -27,7 +27,7 @@ TextBox::TextBox( Display *dsp, Window win, GC gc, char* text, int x, int y) {
 
     int string_length = strlen(text);
     printf("this workded\n");
-    XDrawString(dsp, win, gc, x, y, text, string_length, font_info);
+    XDrawString(dsp, win, gc, x, y, text, string_length);
 
     //Now draw a box around the text...
     printf("still working\n");
