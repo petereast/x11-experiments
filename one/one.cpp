@@ -44,10 +44,10 @@ int main(int argc, char* argv[])
 	//XDrawLine(dsp, win, gc, 10, 10, 100, 100);
 	//XDrawLine(dsp, win, gc, 100, 10, 10, 100);
 	int xpoints[10] = {100, 40, 05, 20, 40 ,50 , 30, 20, 11, 300};
-	for(int i = 0; i!= 200; i++)
-	{
-		XDrawLine(dsp, win, gc, i*2, 0, i*2, (i^3)+4*i);
-	}
+	//for(int i = 0; i!= 200; i++)
+	//{
+	//	XDrawLine(dsp, win, gc, i*2, 0, i*2, (i^3)+4*i);
+	//}
 	//Let's add some text
 	//Create a font
 	XFontStruct *font_info;
