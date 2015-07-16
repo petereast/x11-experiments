@@ -49,8 +49,8 @@ int main(int argc, char* argv[])
 	}
 	XTextItem *text;
 
-	text.chars = "Hello world";
-	text.nchars = 11;
+	text -> chars = "Hello world";
+	text -> nchars = 11;
 
 	XDrawText(dsp, win, gc, 350, 0, text);
 	event_mask = ButtonPressMask|ButtonReleaseMask|KeyPressMask;
