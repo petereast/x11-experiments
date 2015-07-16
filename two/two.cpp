@@ -52,9 +52,9 @@ int main(int argc, char* argv[])
 
 	XDrawLine(dsp, win, gc, 0, 0, 500, 500);
 	XDrawLine(dsp, win, gc, 0, 500, 500, 0);
-
+	printf("class");
 	TextBox tb(dsp, win, gc, "Hello World", 50, 50);
-
+	printf(" worked nicely :)\n");
 	event_mask = ButtonReleaseMask;
 	XSelectInput(dsp, win, event_mask);
 
