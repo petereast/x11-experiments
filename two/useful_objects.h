@@ -29,7 +29,7 @@ TextBox::TextBox( Display *dsp, Window win, GC gc, char* text, int x, int y) {
     int padding = 5; //Padding of 5 pixels
 
     //Draw the box;
-    XDrawLine(dsp, win, gc, x-padding, y, x+width+padding, y+padding); //Top
+    XDrawLine(dsp, win, gc, x-padding, y+padding, x+width+padding, y+padding); //Top
     //XDrawLine(dsp, win, gc, x-padding, y-padding, x-padding, y-padding-height); //left-side
     //XDrawLine(dsp, win, gc, x+width+padding, y-padding-height, x+width+padding, y+padding); //right side
     //XDrawLine(dsp, win, gc, x-padding, y-(height+padding), x+width+padding, y-height-padding); //bottom
