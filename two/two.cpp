@@ -7,6 +7,12 @@
 #include <string.h>
 #include "useful_objects.h"
 
+#include <X11/Xutil.h>
+
+#include <X11/Xos.h>
+
+#include <X11/Xatom.h>
+
 int main(int argc, char* argv[])
 {
 	printf("This program is designed to be a tester for various UI Elements in an\nupcoming project. Functionality is not important.\n");
