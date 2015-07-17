@@ -26,12 +26,12 @@ public:
 TextBox::TextBox( Display *dsp, Window win, GC gc, char* text, int x, int y) {
     //Load a font
     //XFontStruct **font_info; not sure if I need this
-    this -> x_pos = x;
-    this -> y_pos = y;
-    this -> disp = dsp;
-    this -> wind = win;
-    this -> gc_ = gc;
-    this -> str = text;
+    x_pos = x;
+    y_pos = y;
+    disp = dsp;
+    wind = win;
+    gc_ = gc;
+    str = text;
 
     char *fontname = "6x13";
     if((font_info = XLoadQueryFont(dsp, fontname)) == NULL)
