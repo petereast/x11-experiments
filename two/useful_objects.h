@@ -86,8 +86,8 @@ void  TextBox::update(char* text, int x, int y)
     this -> draw();
   }
 
-int TextBox::getTotalWidth() { return abswidth; }
-int TextBox::getTotalHeight() { return absheight;}
+int GraphicItem::getTotalWidth() { return abswidth; }
+int GraphicItem::getTotalHeight() { return absheight;}
 
 
 
