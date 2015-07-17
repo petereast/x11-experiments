@@ -18,11 +18,12 @@ public:
   TextBox(Display *dsp, Window win, GC gc, char* text, int x, int y);
   int getTotalWidth();
   int getTotalHeight();
+  void update(char* text, int x, int y);
 protected:
   int width, height, x_pos, this -> y_pos_pos, abswidth, absheight;
   char *str;
 
-  void update(char* text, int x, int y);
+
 
 };
 
