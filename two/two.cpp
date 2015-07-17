@@ -72,7 +72,7 @@ int main(int argc, char* argv[])
 			TextBox alert(dsp, win, gc, "/!\\ This window has been resized /!\\", 250, 250);
 			for (int i = 0 ; i != 500; i++)
 			{
-				XDrawLine(dsp, win, gc, i*2, 0, i*2, 500);
+				XDrawLine(dsp, win, gc, i*5, 0, i*2, 500);
 			}
 		}
 	}while(ev.type != ButtonRelease);
