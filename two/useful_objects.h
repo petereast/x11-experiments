@@ -40,7 +40,7 @@ TextBox::TextBox( Display *dsp, Window win, GC gc, char* text, int x, int y) {
     }
 
     XSetFont(dsp, gc, font_info->fid);
-    this.update(this->str, this->x_pos, this->y_pos);
+    this->update(this->str, this->x_pos, this->y_pos);
   }
 
   TextBox::update(char* text, int x, int y)
