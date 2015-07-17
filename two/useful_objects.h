@@ -61,10 +61,10 @@ void  TextBox::update(char* text, int x, int y)
     int padding = 5; //Padding of 5 pixels
 
     //Draw the box;
-    XDrawLine(disp, wind, gc_, x-padding, y+padding, x+width+padding, y+padding); //Top
-    XDrawLine(disp, wind, gc_, x-padding, y+padding, x-padding, y-padding-height); //left-side
-    XDrawLine(disp, wind, gc_, x+width+padding, y-padding-height, x+width+padding, y+padding); //right side
-    XDrawLine(disp, wind, gc_, x-padding, y-padding-height, x+width+padding, y-height-padding); //bottom
+    XDrawLine(this -> disp, this -> wind, gc_, this -> x_pos-padding, this -> y_pos+padding, this -> x_pos+width+padding, this -> y_pos+padding); //Top
+    XDrawLine(this -> disp, this -> wind, gc_, this -> x_pos-padding, this -> y_pos+padding, this -> x_pos-padding, this -> y_pos-padding-height); //left-side
+    XDrawLine(this -> disp, this -> wind, gc_, this -> x_pos+width+padding, this -> y_pos-padding-height, this -> x_pos+width+padding, this -> y_pos+padding); //right side
+    XDrawLine(this -> disp, this -> wind, gc_, this -> x_pos-padding, this -> y_pos-padding-height, this -> x_pos+width+padding, this -> y_pos-height-padding); //bottom
   }
 
 
