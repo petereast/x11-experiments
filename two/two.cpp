@@ -69,11 +69,12 @@ int main(int argc, char* argv[])
 		}
 		else if(ev.type == ConfigureNotify) //This should be used for automatic resizing of app structures.
 		{
-			TextBox alert(dsp, win, gc, "/!\\ This window has been resized /!\\", 250, 250);
 			for (int i = 0 ; i != 500; i++)
 			{
 				XDrawLine(dsp, win, gc, i*5, 0, i*2, 500);
 			}
+			TextBox alert(dsp, win, gc, "/!\\ This window has been resized /!\\", 250, 250);
+
 		}
 	}while(ev.type != ButtonRelease);
 
