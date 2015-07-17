@@ -15,6 +15,7 @@ class TextBox
   Window wind;
   GC gc_;
   int width, height, x_pos,y_pos, abswidth, absheight;
+  int padding; //Padding of 5 pixels
   char *str;
 public:
   TextBox(Display *dsp, Window win, GC gc, char* text, int x, int y);
@@ -32,6 +33,8 @@ TextBox::TextBox( Display *dsp, Window win, GC gc, char* text, int x, int y) {
     wind = win;
     gc_ = gc;
     str = text;
+
+    padding = 5;
 
     char *fontname = "6x13";
     if((font_info = XLoadQueryFont(dsp, fontname)) == NULL)
@@ -53,9 +56,7 @@ void  TextBox::update(char* text, int x, int y)
     this -> y_pos = y;
     this -> str = text;
     int string_length = strlen(this->str);
-
-    int padding = 5; //Padding of 5 pixels
-    XDrawString(this->disp, this->wind, this->gc_, this->x_pos, this->y_pos, this->str, string_length);
+    XDrawString(this->disp, this->wind, this->gc_, this->x_pos-padding, this->y_pos-padding, this->str, string_length);
 
     //Now draw a box around the text...
     //To do this, we must first work out the dimentions
