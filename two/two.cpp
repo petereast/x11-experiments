@@ -71,7 +71,7 @@ int main(int argc, char* argv[])
 		{
 			for (int i = 0 ; i != 500; i++)
 			{
-				XDrawLine(dsp, win, gc, i*5, 0, i*2, 500);
+				XDrawLine(dsp, win, gc, i*5, 0, i*15, 500);
 			}
 			//TextBox alert(dsp, win, gc, "/!\\ This window has been resized /!\\", 250, 250);
 			tb.draw();
