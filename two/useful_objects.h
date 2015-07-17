@@ -50,13 +50,13 @@ TextBox::TextBox( Display *dsp, Window win, GC gc, char* text, int x, int y) {
 void  TextBox::update(char* text, int x, int y)
   {
     //Before moving the TextBox, first we must clear the old one...
-    XClearArea(this -> disp, this -> wind, this->x_pos, this->y_pos, this->abswidth, this->absheight, true);
+    XClearArea(this -> disp, this -> wind, this->x_pos-padding, this->y_pos-padding, this->abswidth, this->absheight, true);
     padding = 5;
     this -> x_pos = x;
     this -> y_pos = y;
     this -> str = text;
     int string_length = strlen(this->str);
-    XDrawString(this->disp, this->wind, this->gc_, this->x_pos-padding, this->y_pos-padding, this->str, string_length);
+    XDrawString(this->disp, this->wind, this->gc_, this->x_pos, this->y_pos, this->str, string_length);
 
     //Now draw a box around the text...
     //To do this, we must first work out the dimentions
