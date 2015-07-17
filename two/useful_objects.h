@@ -19,7 +19,7 @@ public:
   int width, height, x_pos, y_pos;
   char *str;
 
-  update(char* text, int x, int y);
+  void update(char* text, int x, int y);
 };
 
 TextBox::TextBox( Display *dsp, Window win, GC gc, char* text, int x, int y) {
