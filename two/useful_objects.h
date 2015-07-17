@@ -21,6 +21,8 @@ protected:
   char *str;
 
   void update(char* text, int x, int y);
+  int getTotalWidth();
+  int getTotalHeight();
 };
 
 TextBox::TextBox( Display *dsp, Window win, GC gc, char* text, int x, int y) {
@@ -70,6 +72,8 @@ void  TextBox::update(char* text, int x, int y)
     XDrawLine(this -> disp, this -> wind, gc_, this -> x_pos-padding, this -> y_pos-padding-height, this -> x_pos+width+padding, this -> y_pos-height-padding); //bottom
   }
 
+int TextBox::getTotalWidth() { return this -> abswidth; }
+int TextBox::getTotalHeight() { return this -> absheight;}
 
 
 
