@@ -62,7 +62,7 @@ int main(int argc, char* argv[])
 		if(ev.type == KeyPress )
 		{
 			tb.update("Hellllo world!", 70, 30);
-			printf("Total width: %i", tb.abswidth);
+			printf("Total width: %i", tb.getTotalWidth());
 		}
 	}while(ev.type != ButtonRelease);
 
