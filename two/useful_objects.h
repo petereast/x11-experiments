@@ -35,8 +35,30 @@ public:
   int getTotalWidth();
   int getTotalHeight();
   void update(char* text, int x, int y);
+  void draw();
 };
+TextBox::draw()
+{
+  //Clear the destination area for the box;
+  XClearArea(this -> disp, this -> wind, this->x_pos-padding-1, this->y_pos-(this -> absheight)+padding-1, this->abswidth+3, this->absheight+3, true);
+  int string_length = strlen(this->str);
+  XDrawString(this->disp, this->wind, this->gc_, this->x_pos, this->y_pos, this->str, string_length);
 
+  //Now draw a box around the text...
+  //To do this, we must first work out the dimentions
+  width = XTextWidth(font_info, text, string_length);
+  height = font_info->ascent + font_info->descent;
+
+  //publicise the dimentions so that they can be used in other parts of the program
+  this -> abswidth  = width + 2*padding;
+  this -> absheight = height + 2*padding;
+
+  //Draw the box
+  XDrawLine(disp, wind, gc_, x_pos-padding, y_pos+padding, x_pos+width+padding, y_pos+padding); //Top
+  XDrawLine(disp, wind, gc_, x_pos-padding, y_pos+padding,x_pos-padding, y_pos-padding-height); //left-side
+  XDrawLine(disp, wind, gc_, x_pos+width+padding, y_pos-padding-height, x_pos+width+padding, y_pos+padding); //right side
+  XDrawLine(disp, wind, gc_, x_pos-padding, y_pos-padding-height, x_pos+width+padding, y_pos-height-padding); //bottom
+}
 TextBox::TextBox( Display *dsp, Window win, GC gc, char* text, int x, int y) {
     //Load a font
     //XFontStruct **font_info; not sure if I need this
@@ -69,23 +91,7 @@ void  TextBox::update(char* text, int x, int y)
     this -> x_pos = x;
     this -> y_pos = y;
     this -> str = text;
-    int string_length = strlen(this->str);
-    XDrawString(this->disp, this->wind, this->gc_, this->x_pos, this->y_pos, this->str, string_length);
-
-    //Now draw a box around the text...
-    //To do this, we must first work out the dimentions
-    width = XTextWidth(font_info, text, string_length);
-    height = font_info->ascent + font_info->descent;
-
-    //publicise the dimentions so that they can be used in other parts of the program
-    this -> abswidth  = width + 2*padding;
-    this -> absheight = height + 2*padding;
-
-    //Draw the box
-    XDrawLine(disp, wind, gc_, x_pos-padding, y_pos+padding, x_pos+width+padding, y_pos+padding); //Top
-    XDrawLine(disp, wind, gc_, x_pos-padding, y_pos+padding,x_pos-padding, y_pos-padding-height); //left-side
-    XDrawLine(disp, wind, gc_, x_pos+width+padding, y_pos-padding-height, x_pos+width+padding, y_pos+padding); //right side
-    XDrawLine(disp, wind, gc_, x_pos-padding, y_pos-padding-height, x_pos+width+padding, y_pos-height-padding); //bottom
+    this.draw();
   }
 
 int TextBox::getTotalWidth() { return abswidth; }
