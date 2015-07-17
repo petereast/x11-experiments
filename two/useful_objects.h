@@ -50,7 +50,7 @@ TextBox::TextBox( Display *dsp, Window win, GC gc, char* text, int x, int y) {
 void  TextBox::update(char* text, int x, int y)
   {
     //Before moving the TextBox, first we must clear the old one...
-    XClearArea(this -> disp, this -> wind, this->x_pos-padding, this->y_pos-padding(this -> absheight), this->abswidth, this->absheight, true);
+    XClearArea(this -> disp, this -> wind, this->x_pos-padding, this->y_pos-padding-(this -> absheight), this->abswidth, this->absheight, true);
     padding = 5;
     this -> x_pos = x;
     this -> y_pos = y;
