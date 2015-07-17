@@ -8,6 +8,7 @@
 
 class GraphicItem
 {
+protected:
  XFontStruct *font_info;
  Display *disp;
  Window wind;
