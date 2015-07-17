@@ -54,7 +54,7 @@ int main(int argc, char* argv[])
 	//Create a background texture - for debug, but it might get carried on :P
 	for (int i = -500; i != 500; i++)
 	{
-		XDrawLine(dsp, win, gc, i, i, 0, 0);
+		XDrawLine(dsp, win, gc, i, i, 500, 500);
 	}
 
 
