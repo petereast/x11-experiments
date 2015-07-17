@@ -10,7 +10,7 @@ for directory in $(ls -R -1 -B -U -L | grep ":" | awk '{gsub(":", "/"); print}')
 		for filename in $(ls $directory -B -1 | grep ".cpp")
 			do
 				target="$directory$filename"
-				g++  $target  -lX11 -o "$directory"out >> "${directory}compile.log"
+				g++  $target -Wwrite-strings -lX11 -o "$directory"out >> "${directory}compile.log"
 				echo "Built $target\nOutput to ${directory}out";
 	done
 done
@@ -27,4 +27,4 @@ git commit --message="Automated git update commital"
 #you guessed it, push those files to a seperate branch to the main code repo
 git push origin HEAD:minutely_build
 
-clear && echo "Automated build and commit complete"
+clear && echo "Automated build and commit complete\npoop"
