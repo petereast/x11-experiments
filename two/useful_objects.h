@@ -6,34 +6,26 @@
 #include <string.h>
 #include <stdio.h>
 
-//class GraphicItem
-//{
-//  XFontStruct *font_info;
-//  Display *disp;
-//  Window wind;
-//  GC gc_;
-//  int width, height, x_pos,y_pos, abswidth, absheight;
-//  int padding; //Padding of 5 pixels
-//  char *str;
-//public:
-//  int getTotalWidth();
-//  int getTotalHeight();
-//  void update(char* text, int x, int y);
-//};
-
-class TextBox// : public GraphicItem
+class GraphicItem
 {
-  XFontStruct *font_info;
-  Display *disp;
-  Window wind;
-  GC gc_;
-  int width, height, x_pos,y_pos, abswidth, absheight;
-  int padding; //Padding of 5 pixels
-  char *str;
+ XFontStruct *font_info;
+ Display *disp;
+ Window wind;
+ GC gc_;
+ int width, height, x_pos,y_pos, abswidth, absheight;
+ int padding; //Padding of 5 pixels
+ char *str;
+public:
+ int getTotalWidth();
+ int getTotalHeight();
+ //void update(char* text, int x, int y);
+ void draw();
+};
+
+class TextBox : public GraphicItem
+{
 public:
   TextBox(Display *dsp, Window win, GC gc, char* text, int x, int y);
-  int getTotalWidth();
-  int getTotalHeight();
   void update(char* text, int x, int y);
   void draw();
 };
