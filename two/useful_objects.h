@@ -46,7 +46,7 @@ void TextBox::draw()
 
   //Now draw a box around the text...
   //To do this, we must first work out the dimentions
-  width = XTextWidth(font_info, text, string_length);
+  width = XTextWidth(font_info, this->str, string_length);
   height = font_info->ascent + font_info->descent;
 
   //publicise the dimentions so that they can be used in other parts of the program
