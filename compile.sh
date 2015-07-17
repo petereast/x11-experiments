@@ -10,7 +10,7 @@ for directory in $(ls -R -1 -B -U -L | grep ":" | awk '{gsub(":", "/"); print}')
 		for filename in $(ls $directory -B -1 | grep ".cpp")
 			do
 				target="$directory$filename"
-				g++  $target -W write-strings -lX11 -o "$directory"out >> "${directory}compile.log"
+				g++  $target -Wwrite-strings -lX11 -o "$directory"out >> "${directory}compile.log"
 				echo "Built $target\nOutput to ${directory}out";
 	done
 done
