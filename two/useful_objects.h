@@ -16,13 +16,14 @@ class TextBox
   GC gc_;
 public:
   TextBox(Display *dsp, Window win, GC gc, char* text, int x, int y);
+  int getTotalWidth();
+  int getTotalHeight();
 protected:
   int width, height, x_pos, y_pos, abswidth, absheight;
   char *str;
 
   void update(char* text, int x, int y);
-  int getTotalWidth();
-  int getTotalHeight();
+
 };
 
 TextBox::TextBox( Display *dsp, Window win, GC gc, char* text, int x, int y) {
