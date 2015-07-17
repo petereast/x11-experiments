@@ -64,7 +64,7 @@ void  TextBox::update(char* text, int x, int y)
   {
     //Before moving the TextBox, first we must clear the old one...
     //It'll clear an extra pixel surrounding the object.
-    XClearArea(this -> disp, this -> wind, this->x_pos-padding-1, this->y_pos-(this -> absheight)+padding-1, this->abswidth+2, this->absheight+2, true);
+    XClearArea(this -> disp, this -> wind, this->x_pos-padding-1, this->y_pos-(this -> absheight)+padding-1, this->abswidth+3, this->absheight+3, true);
     padding = 5;
     this -> x_pos = x;
     this -> y_pos = y;
