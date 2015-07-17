@@ -55,7 +55,7 @@ int main(int argc, char* argv[])
 
 
 
-	event_mask = ButtonPressMask | KeyPressMask | ExposureMask | StructureNotifyMask;
+	event_mask = ButtonPressMask | KeyPressMask | ExposureMask | StructureNotifyMask | PointerMotionMask;
 	XSelectInput(dsp, win, event_mask);
 	TextBox tb(dsp, win, gc, "Hello World", 50, 50), tb2(dsp, win, gc, "Goodbye World", 100, 300);
 	do{
@@ -66,6 +66,12 @@ int main(int argc, char* argv[])
 			printf("Total width: %i\n", tb.getTotalWidth());
 
 			tb2.update("riuaboigubrgiabel", 300, 300);
+
+			char buffer[40];
+			KeySym key;
+			XComposeStatus compose;
+			int charslen = XLookupString(&ev, buffer, 40, key, compose);
+			printf("You pressed: %s", buffer);
 		}
 		else if(ev.type == ConfigureNotify) //This should be used for automatic resizing of app structures.
 		{
