@@ -14,7 +14,7 @@ class TextBox
   Display *disp;
   Window wind;
   GC gc_;
-  int width, height, x_pos, this -> y_pos_pos, abswidth, absheight;
+  int width, height, x_pos,y_pos, abswidth, absheight;
   char *str;
 public:
   TextBox(Display *dsp, Window win, GC gc, char* text, int x, int y);
