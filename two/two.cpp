@@ -63,6 +63,8 @@ int main(int argc, char* argv[])
 		{
 			tb.update("Hellllo world!", 70, 30);
 			printf("Total width: %i\n", tb.getTotalWidth());
+
+			tb2.update("riuaboigubrgiabel", 300, 300);
 		}
 	}while(ev.type != ButtonRelease);
 
