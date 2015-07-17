@@ -58,7 +58,7 @@ int main(int argc, char* argv[])
 	}
 
 
-	event_mask = ButtonReleaseMask | KeyPressMask;
+	event_mask = ButtonPressMask | KeyPressMask | ExposureMask | StructureNotifyMask;
 	XSelectInput(dsp, win, event_mask);
 	TextBox tb(dsp, win, gc, "Hello World", 50, 50), tb2(dsp, win, gc, "Goodbye World", 100, 300);
 	do{
@@ -69,6 +69,10 @@ int main(int argc, char* argv[])
 			printf("Total width: %i\n", tb.getTotalWidth());
 
 			tb2.update("riuaboigubrgiabel", 300, 300);
+		}
+		else if(ev.type == ConfigureNotify)
+		{
+			TextBox alert(dsp, win, gc, "/!\\ This window has been resized /!\\", 250, 250);
 		}
 	}while(ev.type != ButtonRelease);
 
