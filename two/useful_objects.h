@@ -43,7 +43,7 @@ TextBox::TextBox( Display *dsp, Window win, GC gc, char* text, int x, int y) {
     this->update(this->str, this->x_pos, this->y_pos);
   }
 
-  TextBox::update(char* text, int x, int y)
+void  TextBox::update(char* text, int x, int y)
   {
     this -> x_pos = x;
     this -> y_pos = y;
