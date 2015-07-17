@@ -52,10 +52,7 @@ int main(int argc, char* argv[])
 	//XDrawLine(dsp, win, gc, 0, 0, 500, 500);
 
 	//Create a background texture - for debug, but it might get carried on :P
-	for (int i = 0 ; i != 500; i++)
-	{
-		XDrawLine(dsp, win, gc, i*2, 0, i*2, 500);
-	}
+
 
 
 	event_mask = ButtonPressMask | KeyPressMask | ExposureMask | StructureNotifyMask;
@@ -70,9 +67,13 @@ int main(int argc, char* argv[])
 
 			tb2.update("riuaboigubrgiabel", 300, 300);
 		}
-		else if(ev.type == ConfigureNotify)
+		else if(ev.type == ConfigureNotify) //This should be used for automatic resizing of app structures.
 		{
 			TextBox alert(dsp, win, gc, "/!\\ This window has been resized /!\\", 250, 250);
+			for (int i = 0 ; i != 500; i++)
+			{
+				XDrawLine(dsp, win, gc, i*2, 0, i*2, 500);
+			}
 		}
 	}while(ev.type != ButtonRelease);
 
