@@ -64,10 +64,10 @@ void  TextBox::update(char* text, int x, int y)
     this -> absheight = height + 2*padding;
 
     //Draw the box
-    XDrawLine(this -> disp, this -> wind, gc_, this -> x_pos-padding, this -> y_pos+padding, this -> x_pos+width+padding, this -> y_pos+padding); //Top
-    XDrawLine(this -> disp, this -> wind, gc_, this -> x_pos-padding, this -> y_pos+padding, this -> x_pos-padding, this -> y_pos-padding-height); //left-side
-    XDrawLine(this -> disp, this -> wind, gc_, this -> x_pos+width+padding, this -> y_pos-padding-height, this -> x_pos+width+padding, this -> y_pos+padding); //right side
-    XDrawLine(this -> disp, this -> wind, gc_, this -> x_pos-padding, this -> y_pos-padding-height, this -> x_pos+width+padding, this -> y_pos-height-padding); //bottom
+    XDrawLine(disp, wind, gc_, x_pos-padding, y_pos+padding, x_pos+width+padding, y_pos+padding); //Top
+    XDrawLine(disp, wind, gc_, x_pos-padding, y_pos+padding,x_pos-padding, y_pos-padding-height); //left-side
+    XDrawLine(disp, wind, gc_, x_pos+width+padding, y_pos-padding-height, x_pos+width+padding, y_pos+padding); //right side
+    XDrawLine(disp, wind, gc_, x_pos-padding, y_pos-padding-height, x_pos+width+padding, y_pos-height-padding); //bottom
   }
 
 int TextBox::getTotalWidth() { return abswidth; }
