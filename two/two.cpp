@@ -50,10 +50,14 @@ int main(int argc, char* argv[])
 	//TODO: Impliment an easy text object.
 
 	//XDrawLine(dsp, win, gc, 0, 0, 500, 500);
-	//XDrawLine(dsp, win, gc, 0, 500, 500, 0);
-	printf("class");
 
-	printf(" worked nicely :)\n");
+	//Create a background texture - for debug, but it might get carried on :P
+	for (int i = -500, i != 500, i++)
+	{
+		XDrawLine(dsp, win, gc, i, i, 0, 0);
+	}
+
+
 	event_mask = ButtonReleaseMask | KeyPressMask;
 	XSelectInput(dsp, win, event_mask);
 	TextBox tb(dsp, win, gc, "Hello World", 50, 50), tb2(dsp, win, gc, "Goodbye World", 100, 300);
