@@ -54,11 +54,15 @@ int main(int argc, char* argv[])
 	printf("class");
 
 	printf(" worked nicely :)\n");
-	event_mask = ButtonReleaseMask;
+	event_mask = ButtonReleaseMask | KeyPressMask;
 	XSelectInput(dsp, win, event_mask);
 	TextBox tb(dsp, win, gc, "Hello World", 50, 50), tb2(dsp, win, gc, "Goodbye World", 100, 300);
 	do{
 		XNextEvent(dsp, &ev);
+		if(ev.type == KeyPress )
+		{
+			tb.update("Hellllo world!", 70, 30);
+		}
 	}while(ev.type != ButtonRelease);
 
 	XDestroyWindow(dsp, win);
