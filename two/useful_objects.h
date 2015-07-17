@@ -19,7 +19,7 @@ public:
   int getTotalWidth();
   int getTotalHeight();
 protected:
-  int width, height, x_pos, y_pos, abswidth, absheight;
+  int width, height, x_pos, this -> y_pos_pos, abswidth, absheight;
   char *str;
 
   void update(char* text, int x, int y);
