@@ -91,7 +91,7 @@ void  TextBox::update(char* text, int x, int y)
     this -> x_pos = x;
     this -> y_pos = y;
     this -> str = text;
-    this.draw();
+    this -> draw();
   }
 
 int TextBox::getTotalWidth() { return abswidth; }
