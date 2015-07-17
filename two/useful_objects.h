@@ -6,9 +6,22 @@
 #include <string.h>
 #include <stdio.h>
 
+class GraphicItem
+{
+  XFontStruct *font_info;
+  Display *disp;
+  Window wind;
+  GC gc_;
+  int width, height, x_pos,y_pos, abswidth, absheight;
+  int padding; //Padding of 5 pixels
+  char *str;
+public:
+  int getTotalWidth();
+  int getTotalHeight();
+  void update(char* text, int x, int y);
+}
 
-
-class TextBox
+class TextBox : public GraphicItem
 {
   XFontStruct *font_info;
   Display *disp;
@@ -50,7 +63,8 @@ TextBox::TextBox( Display *dsp, Window win, GC gc, char* text, int x, int y) {
 void  TextBox::update(char* text, int x, int y)
   {
     //Before moving the TextBox, first we must clear the old one...
-    XClearArea(this -> disp, this -> wind, this->x_pos-padding, this->y_pos-(this -> absheight)+padding, this->abswidth, this->absheight, true);
+    //It'll clear an extra pixel surrounding the object.
+    XClearArea(this -> disp, this -> wind, this->x_pos-padding-1, this->y_pos-(this -> absheight)+padding-1, this->abswidth+2, this->absheight+2, true);
     padding = 5;
     this -> x_pos = x;
     this -> y_pos = y;
