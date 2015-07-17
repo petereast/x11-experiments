@@ -46,6 +46,9 @@ TextBox::TextBox( Display *dsp, Window win, GC gc, char* text, int x, int y) {
 
 void  TextBox::update(char* text, int x, int y)
   {
+    //Before moving the TextBox, first we must clear the old one...
+    XClearArea(this -> disp, this -> wind, this->x_pos, this->y_pos, this->absheight, this->abswidth, false);
+
     this -> x_pos = x;
     this -> y_pos = y;
     this -> str = text;
