@@ -50,7 +50,7 @@ void  TextBox::update(char* text, int x, int y)
     this -> str = text;
     int string_length = strlen(this->str);
     printf("this workded\n");
-    XDrawString(this->dsip, this->wind, this->gc_, this->x_pos, this->y_pos, this->str, string_length);
+    XDrawString(this->disp, this->wind, this->gc_, this->x_pos, this->y_pos, this->str, string_length);
 
     //Now draw a box around the text...
     printf("still working\n");
