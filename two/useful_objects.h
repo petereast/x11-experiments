@@ -16,7 +16,8 @@ class TextBox
   GC gc_;
 public:
   TextBox(Display *dsp, Window win, GC gc, char* text, int x, int y);
-  int width, height, x_pos, y_pos;
+protected:
+  int width, height, x_pos, y_pos, abswidth, absheight;
   char *str;
 
   void update(char* text, int x, int y);
@@ -49,18 +50,20 @@ void  TextBox::update(char* text, int x, int y)
     this -> y_pos = y;
     this -> str = text;
     int string_length = strlen(this->str);
-    printf("this workded\n");
+
+    int padding = 5; //Padding of 5 pixels
     XDrawString(this->disp, this->wind, this->gc_, this->x_pos, this->y_pos, this->str, string_length);
 
     //Now draw a box around the text...
-    printf("still working\n");
+    //To do this, we must first work out the dimentions
     width = XTextWidth(font_info, text, string_length);
     height = font_info->ascent + font_info->descent;
-    printf("Width: %i, Height: %i", width, height);
-    printf("Not working anymore\n");
-    int padding = 5; //Padding of 5 pixels
 
-    //Draw the box;
+    //publicise the dimentions so that they can be used in other parts of the program
+    this -> abswidth  = width + 2*padding;
+    this -> absheight = height + 2*padding;
+
+    //Draw the box
     XDrawLine(this -> disp, this -> wind, gc_, this -> x_pos-padding, this -> y_pos+padding, this -> x_pos+width+padding, this -> y_pos+padding); //Top
     XDrawLine(this -> disp, this -> wind, gc_, this -> x_pos-padding, this -> y_pos+padding, this -> x_pos-padding, this -> y_pos-padding-height); //left-side
     XDrawLine(this -> disp, this -> wind, gc_, this -> x_pos+width+padding, this -> y_pos-padding-height, this -> x_pos+width+padding, this -> y_pos+padding); //right side
