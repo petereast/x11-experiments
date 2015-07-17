@@ -36,7 +36,7 @@ TextBox::TextBox( Display *dsp, Window win, GC gc, char* text, int x, int y) {
 
     padding = 5;
 
-    char *fontname = "6x13";
+    char *fontname = "9x15";
     if((font_info = XLoadQueryFont(dsp, fontname)) == NULL)
     {
       printf("Error loading the font :(\n");
