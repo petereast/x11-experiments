@@ -5,6 +5,7 @@
 #include <X11/Xlib.h>
 #include <stdio.h>
 #include <iostream>
+#include <vector>
 
 //finished including modules
 
@@ -25,7 +26,7 @@ struct X11_data
 };
 
 X11_data initialise_x11(int window_height, int window_width)
-{
+
   X11_data x;
   x.display = XOpenDisplay( NULL );
   if(!x.display){exit(-1);}
@@ -141,6 +142,23 @@ void TextBox::TextBox(X11_data& xd, int x, int y, char* text, char* font)
 }
 
 
+
+//Define some arrays and general functions
+
+std::vector<GraphicItem> Graphics_Array;
+
+void addGraphicItem(GraphicItem gi)
+{
+  Graphics_Array.push_back(gi);
+}
+
+void drawGraphics()
+{
+  for(std::vector<int>::iterator = Graphics_Array.begin(); it != Graphics_Array.end(); ++it )
+  {
+    *it.Draw(False);
+  }
+}
 
 
 //end of header file
