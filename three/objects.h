@@ -137,7 +137,7 @@ TextBox::TextBox(X11_data& xd, int x, int y, char* text, char* font)
   if((x_data.fontInfo = XLoadQueryFont(x_data.display, font)) == NULL)
   {
     printf("[X11 ERROR] '%s' isn't a valid font, using 6x13 instead.", font);
-    x_data->fontInfo = XLoadQueryFont(x_data.display, "6x13");
+    x_data.fontInfo = XLoadQueryFont(x_data.display, "6x13");
   }
   XSetFont(x_data.display, x_data.window, x_data.gc, x_data.fontInfo->fid);
 
