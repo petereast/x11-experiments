@@ -168,7 +168,7 @@ void drawGraphics()
 {
   for(std::vector<GraphicItem>::iterator it = Graphics_Array.begin(); it != Graphics_Array.end(); ++it )
   {
-    (*it).Draw(false);
+    (*it)->Draw(false);
   }
 }
 
