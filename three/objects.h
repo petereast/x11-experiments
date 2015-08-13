@@ -29,7 +29,7 @@ struct X11_data
 
 X11_data initialise_x11(int window_height, int window_width)
 {
-  pritnf("eiusbse");
+  printf("eiusbse");
   X11_data x;
   x.display = XOpenDisplay( NULL );
   if(!x.display){exit(-1);}
