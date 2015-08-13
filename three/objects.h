@@ -101,10 +101,10 @@ void TextBox::Draw(bool initial)
   if(initial) //if this is the first time the function is run...
   {
     //calculate the dimentions of the text
-    int textwidth = XTextWidth(&(x_data.fontInfo), text, strlen(text));
+    int textwidth = XTextWidth(x_data.fontInfo, text, strlen(text));
 
     this->width = textwidth+(padding*2);
-    this->height = x_data.fontInfo.ascent + x_data.fontInfo.descent + (padding*2);
+    this->height = x_data->fontInfo->ascent + x_data->fontInfo->descent + (padding*2);
 
   }
   //clear the area!
