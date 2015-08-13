@@ -5,6 +5,7 @@
 #include <X11/Xlib.h>
 #include <stdio.h>
 #include <iostream>
+#include <stdlib.h>
 #include <vector>
 
 //finished including modules
