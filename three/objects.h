@@ -51,10 +51,11 @@ X11_data initialise_x11(int window_height, int window_width)
 
   x.event_mask = StructureNotifyMask;
   fprintf(stdout, "[ln53]");
+  XSelectInput(x.display, x.window, x.event_mask);
   do{
     XNextEvent(x.display, &x.event);
   }while(x.event.type != MapNotify);
-  printf("[ln57]");
+  printf("[ln58]");
 
 
   x.gc = XCreateGC(x.display, x.window, 0, NULL);
