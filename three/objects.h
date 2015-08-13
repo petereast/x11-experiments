@@ -74,11 +74,12 @@ public:
   void setId(char* id);
 };
 
-GraphicItem::getId()
+char* GraphicItem::getId()
 {
   return id;
 }
-GraphicItem::setId(char* id)
+
+void GraphicItem::setId(char* id)
 {
   this->id = id;
 }
