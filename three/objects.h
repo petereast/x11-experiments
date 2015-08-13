@@ -81,7 +81,7 @@ public:
 
 void GraphicItem::Draw(bool initial)
 {
-  printf("[ MSG ] Raw GraphicItem class does not draw");
+  printf("[ MSG ] Raw GraphicItem (%s) class does not draw", id);
 }
 
 char* GraphicItem::getId()
