@@ -104,7 +104,7 @@ void TextBox::Draw(bool initial)
     int textwidth = XTextWidth(x_data.fontInfo, text, strlen(text));
 
     this->width = textwidth+(padding*2);
-    this->height = x_data.fontInfo -> ascent + x_data.fontInfo -> descent + (padding*2);
+    this->height = x_data.fontInfo.ascent + x_data.fontInfo.descent + (padding*2);
 
   }
   //clear the area!
