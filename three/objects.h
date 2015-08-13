@@ -7,7 +7,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
-#include <vector>
+#include <stack>
 
 //finished including modules
 
@@ -159,19 +159,16 @@ TextBox::TextBox(X11_data& xd, int x, int y, char* text, char* font)
 
 //Define some arrays and general functions
 
-std::vector<GraphicItem> Graphics_Array;
+std::stack<GraphicItem> Graphics_Array;
 
 void addGraphicItem(GraphicItem gi)
 {
-  Graphics_Array.push_back(gi);
+  Graphics_Array.push(gi);
 }
 
 void drawGraphics()
 {
-  for(std::vector<GraphicItem>::iterator it = Graphics_Array.begin(); it != Graphics_Array.end(); ++it )
-  {
-    (*it).Draw(false);
-  }
+  
 }
 
 
