@@ -101,7 +101,7 @@ void TextBox::Draw(bool initial)
   if(initial) //if this is the first time the function is run...
   {
     //calculate the dimentions of the text
-    int textwidth = XTextWidth(x_data.fontInfo, text, strlen(text));
+    int textwidth = XTextWidth(x_data->fontInfo, text, strlen(text));
 
     this->width = textwidth+(padding*2);
     this->height = x_data.fontInfo.ascent + x_data.fontInfo.descent + (padding*2);
@@ -115,7 +115,7 @@ void TextBox::Draw(bool initial)
 
   //Draw the box
   XDrawLine(x_data.display, x_data.window, x_data.gc, x-padding, y-padding, x+width+padding, y-padding);
-  XDrawLine(x_data.diaplay, x_data.window, x_data.gc, x-padding, y-padding, x-padding, y+height+padding);
+  XDrawLine(x_data.display, x_data.window, x_data.gc, x-padding, y-padding, x-padding, y+height+padding);
   XDrawLine(x_data.display, x_data.window, x_data.gc, x-padding, y+height+padding, x+width+padding, y+height+padding);
   XDrawLine(x_data.display, x_data.window, x_data.gc, x+width+padding, y-padding, x+width+padding, y+height+padding);
 }
