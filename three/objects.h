@@ -175,5 +175,15 @@ void drawGraphics()
 }
 
 
+//Deal with events
+
+XEvent getNextEvent(X11_data xd, XEventMask xm)
+{
+  XEvent ev;
+  XSelectInput(xd.display, xd.window, xm);
+  XNextEvent(xd.display, &ev);
+  return ev;
+}
+
 //end of header file
 #endif
