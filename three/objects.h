@@ -93,7 +93,7 @@ protected:
 public:
   void Draw(bool initial); //Function to draw the textbox
   void Update(int x, int y, char* text, bool initial);
-  void TextBox(X11_data& xd, int x, int y, char* text, char* font);
+  TextBox(X11_data& xd, int x, int y, char* text, char* font);
 };
 
 void TextBox::Draw(bool initial)
@@ -130,11 +130,11 @@ void TextBox::Update(int x, int y, char* text, bool initial)
 
 }
 
-void TextBox::TextBox(X11_data& xd, int x, int y, char* text, char* font)
+TextBox::TextBox(X11_data& xd, int x, int y, char* text, char* font)
 {
   this->x_data = xd;
   //load a font...
-  if((x_data->fontInfo = XLoadQueryFont(x_data.display, font)) == NULL)
+  if((this->x_data.fontInfo = XLoadQueryFont(x_data.display, font)) == NULL)
   {
     printf("[X11 ERROR] '%s' isn't a valid font, using 6x13 instead.", font);
     x_data.fontInfo = XLoadQueryFont(x_data.display, "6x13");
