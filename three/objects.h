@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <stdlib.h>
+#include <string.h>
 #include <vector>
 
 //finished including modules
