@@ -10,6 +10,7 @@ for directory in $(ls -R -1 -B -U -L | grep ":" | awk '{gsub(":", "/"); print}')
 				target="$directory$filename"
 				g++  -std=c++11 $target -lX11 -o "$directory"out
 				echo "Built $target\nOutput to ${directory}out";
+				echo "********************************************************************************";
 	done
 done
 
