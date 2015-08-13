@@ -10,6 +10,7 @@ int main(int argc, char* argv[])
 
   while(true)
   {
+    printf("test");
     drawGraphics();
   }
 
