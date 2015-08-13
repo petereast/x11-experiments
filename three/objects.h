@@ -76,12 +76,12 @@ public:
   //add some functions here!
   char* getId();
   void setId(char* id);
-  void Draw(bool initial);
+  void Draw(bool initial); ///this should be overloaded
 };
 
 void GraphicItem::Draw(bool initial)
 {
-  printf("[ MSG ] Raw GraphicItem (%s) class does not draw", id);
+  printf("[ MSG ] Raw GraphicItem (%s) class does not draw.\n", id);
 }
 
 char* GraphicItem::getId()
@@ -94,6 +94,8 @@ void GraphicItem::setId(char* id)
   this->id = id;
 }
 
+//Textbox class definition
+
 class TextBox : public GraphicItem
 {
 protected:
@@ -101,6 +103,7 @@ protected:
   int padding = 5;
 public:
   void Draw(bool initial); //Function to draw the textbox
+  //TODO: I need to get this overloaded.
   void Update(int x, int y, char* text, bool initial);
   TextBox(X11_data& xd, int x, int y, char* text, char* font);
 };
