@@ -93,7 +93,7 @@ protected:
 public:
   void Draw(bool initial); //Function to draw the textbox
   void Update(int x, int y, char* text, char* font);
-  void TextBox();
+  void TextBox(X11_data& xd, int x, int y, char* text, char* font)
 };
 
 void TextBox::Draw(bool initial)
@@ -157,7 +157,7 @@ void addGraphicItem(GraphicItem gi)
 
 void drawGraphics()
 {
-  for(std::vector<int>::iterator = Graphics_Array.begin(); it != Graphics_Array.end(); ++it )
+  for(std::vector<int>::iterator it = Graphics_Array.begin(); it != Graphics_Array.end(); ++it )
   {
     *it.Draw(False);
   }
