@@ -13,7 +13,7 @@ int main(int argc, char* argv[])
   while(true)
   {
     //printf("test\n");
-    drawGraphics();
+    tb.Draw(false);
   }
 
   return 0;

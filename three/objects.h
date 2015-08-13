@@ -7,7 +7,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
-#include <stack>
+#include <vector>
 
 //finished including modules
 
@@ -163,12 +163,15 @@ std::stack<GraphicItem> Graphics_Array;
 
 void addGraphicItem(GraphicItem gi)
 {
-  Graphics_Array.push(gi);
+  Graphics_Array.push_back(gi);
 }
 
 void drawGraphics()
 {
-  
+  for(std::vector<GraphicItem>::iterator it = Graphics_Array.begin(); it != Graphics_Array.end(); ++it )
+  {
+    (*it).Draw(false);
+  }
 }
 
 
