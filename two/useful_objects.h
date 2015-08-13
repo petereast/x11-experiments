@@ -30,7 +30,7 @@ public:
   void update(char* text, int x, int y);
   void draw();
 };
-void TextBox::draw()
+void TextBox::Draw()
 {
   //Clear the destination area for the box;
   XClearArea(this -> disp, this -> wind, this->x_pos-padding-1, this->y_pos-(this -> absheight)+padding-1, this->abswidth+3, this->absheight+3, true);
