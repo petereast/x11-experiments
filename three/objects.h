@@ -159,7 +159,7 @@ TextBox::TextBox(X11_data& xd, int x, int y, char* text, char* font)
 
 //Define some arrays and general functions
 
-std::stack<GraphicItem> Graphics_Array;
+std::vector<GraphicItem> Graphics_Array;
 
 void addGraphicItem(GraphicItem gi)
 {
