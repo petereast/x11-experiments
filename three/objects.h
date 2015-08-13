@@ -29,7 +29,7 @@ struct X11_data
 
 X11_data initialise_x11(int window_height, int window_width)
 {
-  fprintf(stdout, "eiusbse");
+  fprintf(stdout, "[ln32]");
   X11_data x;
   x.display = XOpenDisplay( NULL );
   if(!x.display){exit(-1);}
@@ -50,11 +50,13 @@ X11_data initialise_x11(int window_height, int window_width)
   XMapWindow(x.display, x.window);
 
   x.event_mask = StructureNotifyMask;
-  printf("ln53");
+  fprintf(stdout, "[ln53]");
   do{
     XNextEvent(x.display, &x.event);
   }while(x.event.type != MapNotify);
-  printf("ln57");
+  printf("[ln57]");
+
+
   x.gc = XCreateGC(x.display, x.window, 0, NULL);
 
   XSetForeground(x.display, x.gc, x.foreground_colour);
