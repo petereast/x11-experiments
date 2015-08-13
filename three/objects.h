@@ -29,6 +29,7 @@ struct X11_data
 
 X11_data initialise_x11(int window_height, int window_width)
 {
+  pritnf("eiusbse");
   X11_data x;
   x.display = XOpenDisplay( NULL );
   if(!x.display){exit(-1);}
@@ -37,7 +38,6 @@ X11_data initialise_x11(int window_height, int window_width)
 
   x.foreground_colour = WhitePixel(x.display, x.screen_number);
   x.background_colour = BlackPixel(x.display, x.screen_number);
-  printf("he");
   x.window = XCreateSimpleWindow(
     x.display,
     DefaultRootWindow(x.display),
