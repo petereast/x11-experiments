@@ -73,7 +73,13 @@ public:
   //add some functions here!
   char* getId();
   void setId(char* id);
+  void Draw(bool initial);
 };
+
+void GraphicItem::Draw(bool initial)
+{
+  printf("[ MSG ] Raw GraphicItem class does not draw");
+}
 
 char* GraphicItem::getId()
 {
