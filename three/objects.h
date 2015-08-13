@@ -37,7 +37,7 @@ X11_data initialise_x11(int window_height, int window_width)
 
   x.foreground_colour = WhitePixel(x.display, x.screen_number);
   x.background_colour = BlackPixel(x.display, x.screen_number);
-
+  printf("he");
   x.window = XCreateSimpleWindow(
     x.display,
     DefaultRootWindow(x.display),
