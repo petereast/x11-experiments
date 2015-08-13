@@ -42,8 +42,8 @@ X11_data initialise_x11(int window_height, int window_width)
     DefaultRootWindow(x.display),
     0, 0,
     window_height, window_width,
-    0, background_colour,
-    background_colour
+    0, x.background_colour,
+    x.background_colour
   );
 
   XMapWindow(x.display, x.window);
