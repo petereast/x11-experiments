@@ -100,10 +100,10 @@ void TextBox::Draw(bool initial)
   if(initial) //if this is the first time the function is run...
   {
     //calculate the dimentions of the text
-    int textwidth = XTextWidth(x_data.font_info, text, strlen(text));
+    int textwidth = XTextWidth(x_data.fontInfo, text, strlen(text));
 
     this->width = textwidth+(padding*2);
-    this->height = x_data.font_info -> ascent + x_data.font_info -> descent + (padding*2);
+    this->height = x_data.fontInfo -> ascent + x_data.fontInfo -> descent + (padding*2);
 
   }
   //clear the area!
@@ -133,12 +133,12 @@ void TextBox::TextBox(X11_data& xd, int x, int y, char* text, char* font)
 {
   this->x_data = xd;
   //load a font...
-  if((x_data.font_info = XLoadQueryFont(x_data.display, font)) == NULL)
+  if((x_data.fontInfo = XLoadQueryFont(x_data.display, font)) == NULL)
   {
     printf("[X11 ERROR] '%s' isn't a valid font, using 6x13 instead.");
-    x_data.font_info = XLoadQueryFont(x_data.display, "6x13");
+    x_data.fontInfo = XLoadQueryFont(x_data.display, "6x13");
   }
-  XSetFont(x_data.display, x_data.window, x_data.gc, x_data.font_info->fid);
+  XSetFont(x_data.display, x_data.window, x_data.gc, x_data.fontInfo->fid);
 
   Update(x, y, text, true);
 }
