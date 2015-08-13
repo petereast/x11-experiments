@@ -4,14 +4,14 @@
 
 int main(int argc, char* argv[])
 {
-  printf("hello world");
+  printf("hello world\n");
   X11_data xd = initialise_x11(1000, 100);
-  printf("hello world");
+  printf("hello world\n");
   TextBox(xd, 12, 12, "HEllo world!", "9*15");
 
   while(true)
   {
-    printf("test");
+    printf("test\n");
     drawGraphics();
   }
 
