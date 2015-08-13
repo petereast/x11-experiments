@@ -135,7 +135,7 @@ void TextBox::Update(int x, int y, char* text, bool initial)
   this -> y = y;
   this -> text = text;
 
-  this.Draw(initial);
+  this -> Draw(initial);
 }
 
 TextBox::TextBox(X11_data& xd, int x, int y, char* text, char* font)
