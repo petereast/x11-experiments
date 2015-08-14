@@ -20,9 +20,17 @@ struct Attributes{ //This will contain all of the possible attributes for the gr
                  //be accessable regardless of the type.
   int TYPE; //This'll be a macro from 0 to whatever, to be added as we go along.
            //For example: Attriblutes.TYPE = TEXTBOX;
-
-
+  int ID; //This is for identifiaction, it should be unique.
+  int X, Y; ///The X and Y positions of the upper corner of the object.
+  int height, width; //The calculated height and width of an object.
+  int padding; //the padding of object's borders.
+  char * text; //the writing to be put into the label or the button or the text box;
+  function callback; //A pointer to a callback function
 };
+
+class GraphicItem{
+  Attributes attr;
+}
 
 
 
