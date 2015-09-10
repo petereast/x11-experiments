@@ -2,6 +2,7 @@
 #define RENDER_H 0x1
 
 #include "objects.h"
+#include <X11/Xlib.h>
 //README:
 //This header will contain all of the functions which use the descriptive classes
 //defined in "objects.h". It will also contain all of the classes for adding new
