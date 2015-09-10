@@ -1,9 +1,28 @@
 #ifndef RENDER_H
 #define RENDER_H 0x1
+
+#include "objects.h"
 //README:
 //This header will contain all of the functions which use the descriptive classes
 //defined in "objects.h". It will also contain all of the classes for adding new
 //elements to the rendering stack
+
+
+struct X11_data
+{
+  Display *display;
+  Window window;
+  XFontStruct* fontInfo;
+  GC gc;
+  int screen_number;
+  unsigned long background_colour;
+  unsigned long foreground_colour;
+
+  unsigned long event_mask;
+
+  XEvent event;
+
+};
 
 X11_data initialise_x11(int window_height, int window_width)
 {

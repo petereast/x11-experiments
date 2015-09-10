@@ -29,7 +29,11 @@ struct Attributes{ //This will contain all of the possible attributes for the gr
 };
 
 class GraphicItem{
+protected:
   Attributes attr;
+public:
+  GraphicItem();
+  //TODO: I Gots to do some more planning  of exactly how I'm going to do this :-)
 }
 
 
