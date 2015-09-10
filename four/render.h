@@ -13,8 +13,24 @@ class RenderPipeline
 {
 protected:
   std::stack<GraphicItem> objects;
+  std::stack<GraphicItem> objects_temp;
 public:
   RenderPipeline(std::stack<GraphicItem> objects);
+  GraphicItem GetNextObject();
+}
+
+RenderPipeline::GetNextObject()
+{
+  GraphicItem obj = this.objects.front();
+  this.objects_temp.push_back(obj);
+  this.objects.pop();
+  if(this.objects.size() == 0)
+  {
+    this.objects = this.objects_temp;
+    this.objects_temp.clear();
+  }
+  return obj;
+
 }
 
 RenderPipeline::RenderPipeline(std::stack<GraphicItem> objects)

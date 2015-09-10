@@ -25,7 +25,6 @@ struct Attributes{ //This will contain all of the possible attributes for the gr
   int height, width; //The calculated height and width of an object.
   int padding; //the padding of object's borders.
   char * text; //the writing to be put into the label or the button or the text box;
-  function callback; //A pointer to a callback function
 };
 
 class GraphicItem{
@@ -34,12 +33,12 @@ protected:
 public:
   GraphicItem(Attributes attributes);
   virtual void callback(){pritnf("This is a callback");}
-  //TODO: I Gots to do some more planning  of exactly how I'm going to do this :-)
+  virtual void draw()
 }
 
 GraphicItem::GraphicItem(Attributes attributes)
 {
-  this.attr = attributes;
+  this->attr = attributes;
 
 }
 
