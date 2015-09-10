@@ -3,11 +3,24 @@
 
 #include "objects.h"
 #include <X11/Xlib.h>
+#include <stack>
 //README:
 //This header will contain all of the functions which use the descriptive classes
 //defined in "objects.h". It will also contain all of the classes for adding new
 //elements to the rendering stack
 
+class RenderPipeline
+{
+protected:
+  std::stack<GraphicItem> objects;
+public:
+  RenderPipeline(std::stack<GraphicItem> objects);
+}
+
+RenderPipeline::RenderPipeline(std::stack<GraphicItem> objects)
+{
+  this.objects = objects;
+}
 
 struct X11_data
 {
@@ -63,6 +76,11 @@ X11_data initialise_x11(int window_height, int window_width)
   return x;
 }
 
+int render_frame(RenderPipeline &pipeline)
+{
+
+  return 0;
+}
 
 
 #endif

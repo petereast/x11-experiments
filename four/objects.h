@@ -32,8 +32,15 @@ class GraphicItem{
 protected:
   Attributes attr;
 public:
-  GraphicItem();
+  GraphicItem(Attributes attributes);
+  virtual void callback(){pritnf("This is a callback");}
   //TODO: I Gots to do some more planning  of exactly how I'm going to do this :-)
+}
+
+GraphicItem::GraphicItem(Attributes attributes)
+{
+  this.attr = attributes;
+
 }
 
 
