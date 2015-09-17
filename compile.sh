@@ -25,4 +25,4 @@ git push origin HEAD:minutely_build
 
 clear && echo "Automated build and commit complete"
 
-notify-send "compile.sh""The compilation and git commit for $(pwd) is complete"
+notify-send "compile.sh" "The compilation and git commit for $(pwd) is complete"
